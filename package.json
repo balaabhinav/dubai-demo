@@ -1,0 +1,27 @@
+{
+  "name": "dubai-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf server-dist/*",
+    "build": "babel server -d server-dist",
+    "movedist" : "cp -R client/dist server-dist/dist",
+    "start": "npm run clean && npm run build && npm run movedist && node server-dist/index.js"
+  },
+  "author": "bala@stackbubble.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "express": "^4.16.2",
+    "request": "^2.83.0",
+    "socket.io": "^2.0.4",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "rimraf": "^2.6.2"
+  }
+}
