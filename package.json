@@ -8,6 +8,7 @@
     "clean": "rimraf server-dist/*",
     "build": "babel server -d server-dist",
     "movedist" : "cp -R client/dist server-dist/dist",
+    "serve" : "node server-dist/index.js",
     "start": "npm run clean && npm run build && npm run movedist && node server-dist/index.js"
   },
   "author": "bala@stackbubble.com",
