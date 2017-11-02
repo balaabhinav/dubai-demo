@@ -55,7 +55,7 @@ var getTrends = exports.getTrends = function getTrends() {
 	return new Promise(function (resolve, reject) {
 
 		_axios2.default.get("https://api.twitter.com/1.1/trends/place.json?id=" + _config.config.woeID).then(function (data) {
-			return resolve(data.data[0]);
+			if (data && data.data) return resolve(data.data[0]);
 		}).catch(function (err) {
 			console.log("Error => ", err);
 			return resolve(err);

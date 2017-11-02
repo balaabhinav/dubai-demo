@@ -39,6 +39,7 @@ export const getTrends = () => {
 
 		axios.get("https://api.twitter.com/1.1/trends/place.json?id="+config.woeID)
 			.then( data => {
+				if(data && data.data)
 				return resolve(data.data[0]);
 			})
 			.catch( err => {
